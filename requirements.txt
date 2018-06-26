@@ -1,0 +1,2 @@
+ffmpeg-python==0.1.12
+Wand==0.4.4

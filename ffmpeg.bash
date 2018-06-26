@@ -1,0 +1,1 @@
+ffmpeg -i video.mp4 -vf "drawtext=enable='gte(t,0)':fontfile=Vera.ttf:fontcolor=black:text=hello" -t 3 output.mp4
