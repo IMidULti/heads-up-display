@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Make sure virtualenv is installed
+      pip:
+        name: virtualenv
+        state: latest
+
+    - name: Make sure all apt debs are here
+      apt:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - ffmpeg
+
+    - name: Setup virtual environment
+      pip:
+        requirements: "{{ playbook_dir }}/requirements.txt"
+        virtualenv: "{{ playbook_dir }}/virtualenv"
