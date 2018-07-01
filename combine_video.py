@@ -12,7 +12,7 @@ file_list = args.input
 ffmpeg_inputs = list()
 
 for file in file_list:
-    ffmpeg_inputs.append(ffmpeg.input(file).trim(start_frame=0, end_frame=100))
+    ffmpeg_inputs.append(ffmpeg.input(file))
 
 (ffmpeg
     .concat(*ffmpeg_inputs)
